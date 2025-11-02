@@ -9,9 +9,10 @@ import {
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
+
 import TeamSwitcher from "./team-switcher"
-import { data } from "./Data"
 import NavMain from "./nav-main"
+import { data } from "./Data"
 
 
 
