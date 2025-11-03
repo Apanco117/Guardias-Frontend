@@ -2,6 +2,7 @@ import type { Guardia, HomeOfficeEvent } from '@/types';
 import { useMemo } from 'react';
 import DayCell from './DayCell';
 
+
 type CalendarGridType = {
     year : number;
     month : number;
@@ -18,6 +19,7 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
         const map = new Map<number, { guardias: Guardia[], ho: HomeOfficeEvent[] }>();
 
         guardias.forEach(g => {
+
             const eventDate = new Date(g.fecha);
             if (eventDate.getMonth() === month && eventDate.getFullYear() === year) {
                 const day = eventDate.getDate();
@@ -74,7 +76,7 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
                 {daysArray.map(day => {
                     const events = eventByDay.get(day) || { guardias: [], ho: [] };
                     return (
-                        <DayCell 
+                        <DayCell
                         key={day}
                         day={day}
                         guardias={events.guardias}
