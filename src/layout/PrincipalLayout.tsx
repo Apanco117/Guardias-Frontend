@@ -8,7 +8,7 @@ import {
 import AppSidebar from "@/components/SideBar/app-sidebar";
 export default function PrincipalLayout() {
     return (
-         <SidebarProvider>
+         <SidebarProvider defaultOpen={false} >
             <AppSidebar />
             <SidebarInset>
                 <header className="fixed w-full z-50 h-16 shrink-0 flex items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 border-b-2 bg-background">

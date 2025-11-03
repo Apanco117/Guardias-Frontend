@@ -1,10 +1,10 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Button } from "../ui/button";
 import type { RequestGenrarCalendario, ResponseGenerarCalendario } from "@/types";
 import { toast } from 'react-toastify';
 import { generarCalendario } from "@/api";
 import { Spinner } from "@/components/ui/spinner"
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 
 type GenerarCalendarioProps = {
@@ -38,8 +38,8 @@ export default function GenerarCalendario( {mes, anio} : GenerarCalendarioProps 
     }
 
     return (
-        <div className=" w-full flex justify-end">
-            <Button disabled={isLoading} onClick={handleClick} variant={"outline"} className=" border-2 border-primary cursor-pointer">
+        <div className=" w-full flex justify-end pt-5 md:pt-0">
+            <Button disabled={isLoading} onClick={handleClick} variant={"outline"} className=" border-2 border-primary cursor-pointer w-full md:w-auto">
                 {isLoading ? (
                     <>
                         <Spinner/> Generando calendario

@@ -18,7 +18,7 @@ export default function Calendario() {
     const [month , setMonth] = useState( new Date().getMonth() ) // 0 - 11
     const [year, setYear] = useState( new Date().getFullYear() )
     
-    console.log( `${month} / ${year}` )
+    //console.log( `${month} / ${year}` )
 
     const { 
         data: guardiasData, 
