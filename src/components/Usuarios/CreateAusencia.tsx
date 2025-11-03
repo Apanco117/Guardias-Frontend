@@ -38,6 +38,9 @@ type CreateAusenciaFormSchema = z.infer<typeof FormSchema>;
 
 export default function CreateAusencia( {usuario} : CreateAusenciaType ) {
 
+    const currentYear = new Date().getFullYear();
+    const today = new Date();
+
     const [searchParams, setSearchParams] = useSearchParams();
 
     const [isLoading, setLoading] = useState<boolean> (false);
@@ -166,7 +169,12 @@ export default function CreateAusencia( {usuario} : CreateAusenciaType ) {
                                                     locale={es}
                                                     onSelect={field.onChange} 
                                                     captionLayout="dropdown"
-                                                    numberOfMonths={2} 
+                                                    fromYear={currentYear}          // El menú de año empezará en 2025
+                                                    toYear={currentYear + 10}       // El menú terminará en 2035
+
+                                                    // 3. (Recomendado) Deshabilita todos los días ANTERIORES a hoy
+                                                    fromDate={today}
+                                                    numberOfMonths={1} 
                                                 />
                                             </PopoverContent>
                                         </Popover>
