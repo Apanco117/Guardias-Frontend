@@ -38,14 +38,14 @@ export default function GenerarCalendario( {mes, anio} : GenerarCalendarioProps 
     }
 
     return (
-        <div className=" w-full flex justify-end pt-5 md:pt-0">
+        <div className=" w-full flex justify-center lg:justify-end pt-5 lg:pt-0">
             <Button disabled={isLoading} onClick={handleClick} variant={"outline"} className=" border-2 border-primary cursor-pointer w-full md:w-auto">
                 {isLoading ? (
                     <>
-                        <Spinner/> Generando calendario
+                        <Spinner/> <p className="">Generando calendario</p>
                     </>
                 ) : (
-                    <> Generar calendario </>
+                    <p className=" truncate"> Generar calendario </p>
                 )}
             
             </Button>

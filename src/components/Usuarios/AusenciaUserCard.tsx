@@ -14,7 +14,14 @@ import { Spinner } from "../ui/spinner"
 type AusenciaUserCardProps = {
     ausencia : Ausencia
 }
-
+const parseUTCStringAsLocal = (dateString: string): Date => {
+    const date = new Date(dateString);
+    return new Date(
+        date.getUTCFullYear(),
+        date.getUTCMonth(),
+        date.getUTCDate()
+    );
+}
 
 export default function AusenciaUserCard( {ausencia} : AusenciaUserCardProps ) {
 
@@ -35,8 +42,9 @@ export default function AusenciaUserCard( {ausencia} : AusenciaUserCardProps ) {
     })
 
     const [dateRange, _setDateRange] = useState<DateRange | undefined>({
-        from: new Date(ausencia.fechaInicio),
-        to: new Date(ausencia.fechaFin),
+        from: parseUTCStringAsLocal(ausencia.fechaInicio),
+        // Aplica la función de parseo a 'to'
+        to: parseUTCStringAsLocal(ausencia.fechaFin),
     })
 
     const handleDelete = async () => {

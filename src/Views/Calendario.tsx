@@ -65,8 +65,8 @@ export default function Calendario() {
  
     return (
         <div className="">
-            <div className=" w-full grid grid-cols-1 md:grid-cols-3 py-5 ">
-                <div>
+            <div className=" w-full grid grid-cols-1 lg:grid-cols-3 py-5 ">
+                <div className="">
 
                 </div>
                 <div className=" w-full flex justify-center">
