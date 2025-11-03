@@ -13,12 +13,15 @@ const queryClient = new QueryClient()
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Analytics } from "@vercel/analytics/react"
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
        <QueryClientProvider client={queryClient}>
         <Router />
+        <Analytics />
         <ToastContainer 
           position="top-right"
           autoClose={3000}
