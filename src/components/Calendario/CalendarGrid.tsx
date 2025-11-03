@@ -21,8 +21,8 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
         guardias.forEach(g => {
 
             const eventDate = new Date(g.fecha);
-            if (eventDate.getMonth() === month && eventDate.getFullYear() === year) {
-                const day = eventDate.getDate();
+            if (eventDate.getUTCMonth() === month && eventDate.getUTCFullYear() === year) {
+                const day = eventDate.getUTCDate(); 
                 const entry = map.get(day) || { guardias: [], ho: [] };
                 entry.guardias.push(g);
                 map.set(day, entry);
@@ -31,8 +31,8 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
 
         homeOffice.forEach(h => {
             const eventDate = new Date(h.fecha);
-            if (eventDate.getMonth() === month && eventDate.getFullYear() === year) {
-                const day = eventDate.getDate();
+            if (eventDate.getUTCMonth() === month && eventDate.getUTCFullYear() === year) {
+                const day = eventDate.getUTCDate();
                 const entry = map.get(day) || { guardias: [], ho: [] };
                 entry.ho.push(h);
                 map.set(day, entry);

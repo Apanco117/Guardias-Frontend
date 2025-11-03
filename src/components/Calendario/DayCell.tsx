@@ -10,6 +10,7 @@ type DayCellProps = {
 
 
 export default function DayCell( {day, guardias, homeOffice} : DayCellProps ) {
+    console.log(day)
     return (
         <div  className="border border-border p-2 flex flex-col">
             <span className="hidden sm:flex self-end font-medium text-gray-100">{day}</span>
