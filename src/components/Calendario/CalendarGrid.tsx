@@ -59,7 +59,7 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
 
             {/* --- VISTA DE ESCRITORIO (GRID) --- */}
             {/* 'hidden' en móvil, 'grid' en pantallas 'md' y superiores */}
-            <div className="hidden md:grid grid-cols-7 gap-2">
+            <div className="hidden sm:grid grid-cols-7 gap-2">
                 {/* Encabezado (Dom, Lun, Mar...) */}
                 {WEEK_DAYS.map(day => (
                     <div key={day} className="text-center font-bold text-gray-100 mb-2">
@@ -88,7 +88,7 @@ export default function CalendarGrid( {year, month, guardias, homeOffice} : Cale
 
             {/* --- VISTA MÓVIL (LISTA) --- */}
             {/* Se muestra en móvil, 'hidden' en 'md' y superiores */}
-            <div className="md:hidden flex flex-col space-y-2">
+            <div className="sm:hidden flex flex-col space-y-2">
                 {daysArray.map(day => {
                     const events = eventByDay.get(day) || { guardias: [], ho: [] };
                     const date = new Date(year, month, day);

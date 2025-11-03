@@ -12,7 +12,7 @@ type DayCellProps = {
 export default function DayCell( {day, guardias, homeOffice} : DayCellProps ) {
     return (
         <div  className="border border-border p-2 flex flex-col">
-            <span className="hidden md:flex self-end font-medium text-gray-100">{day}</span>
+            <span className="hidden sm:flex self-end font-medium text-gray-100">{day}</span>
 
             <div className="grow overflow-y-auto space-y-1">
                 {guardias.map((g) => (
